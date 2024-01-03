@@ -1,0 +1,2 @@
+# gitGuard
+Guards you git
