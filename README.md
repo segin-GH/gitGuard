@@ -2,7 +2,7 @@
 
 ### gitguard: where sloppy commits meet their match.
 
-# gitGuard
+
 
 ## Overview
 
