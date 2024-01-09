@@ -9,12 +9,10 @@ def read_file(file_path):
 
 
 def validate_commit_message(commit_msg):
-    # using regex to act like a bouncer for commit messages
-    pattern = r"^(feat|fix|docs|style|refactor|perf|test|chore)\([a-z0-9_\-]+\):\s+.+"
+    # now with optional parentheses, because someone couldn't figure out regex
+    pattern = r"^(feat|fix|docs|style|refactor|perf|test|chore)(?:\([a-z0-9_\-]+\))?:\s+.+"
 
-    if not re.match(pattern, commit_msg):
-        return False
-    return True
+    return bool(re.match(pattern, commit_msg))
 
 
 def get_commit_message(file_path):
