@@ -1,6 +1,58 @@
 #!/usr/bin/python3
 import sys
 import re
+# Color codes
+RED = "\033[91m"
+BOLD = "\033[1m"
+END = "\033[0m"
+
+
+def print_error(commit_msg, error_pos, error_msg, style):
+    # Define a tab character for indentation
+    TAB = "\t"
+    print("\n" + TAB + commit_msg)
+    print(TAB + " " * error_pos + style + "^-- " + error_msg + END + "\n")
+    print("Convention: <type>(optional scope): <description>\n")
+
+
+def validate_commit_message(commit_msg):
+    # Regex patterns
+    prefix_pattern = r"^(feat|fix|docs|style|refactor|perf|test|chore)"
+    scope_pattern = r"\([a-z0-9_\-]+\)"
+    message_pattern = r":\s.+$"
+
+    # Color and style codes
+    RED = "\033[91m"
+    BOLD = "\033[1m"
+    END = "\033[0m"
+
+    # Validate prefix
+    prefix_match = re.match(prefix_pattern, commit_msg)
+    if not prefix_match:
+        print_error(
+            commit_msg, 0, "Invalid prefix. Should be feat, fix, docs, etc.", RED + BOLD)
+        return False
+
+    # Process rest of the message after the prefix
+    rest_msg = commit_msg[len(prefix_match.group()):]
+
+    # Validate scope if present
+    if rest_msg.startswith('('):
+        scope_match = re.match(scope_pattern, rest_msg)
+        if not scope_match:
+            print_error(commit_msg, len(prefix_match.group()),
+                        "Invalid scope format. Should be like (scope).", RED + BOLD)
+            return False
+        rest_msg = rest_msg[len(scope_match.group()):]
+
+    # Validate message content
+    if not re.match(message_pattern, rest_msg):
+        error_pos = len(commit_msg) - len(rest_msg)
+        print_error(commit_msg, error_pos,
+                    "Message should start with a colon and space.", RED + BOLD)
+        return False
+
+    return True
 
 
 def read_file(file_path):
@@ -8,25 +60,19 @@ def read_file(file_path):
         return file.read().strip()
 
 
-def validate_commit_message(commit_msg):
-    # now with optional parentheses, because someone couldn't figure out regex
-    pattern = r"^(feat|fix|docs|style|refactor|perf|test|chore)(?:\([a-z0-9_\-]+\))?:\s+.+"
-
-    return bool(re.match(pattern, commit_msg))
-
-
 def get_commit_message(file_path):
     commit_msg = read_file(file_path)
     if not validate_commit_message(commit_msg):
         raise ValueError(
-            "Commit message does not follow conventions. Fix it and try again.")
+            "GITGUARD: Commit message does not follow conventions. Fix it and try again.")
     return commit_msg
 
 
 if __name__ == "__main__":
     try:
+        print("GITGUARD: Verifying commit message...")
         commit_msg = get_commit_message(sys.argv[1])
-        print(f"Commit message verified: {commit_msg}")
+        print(f"GITGUARD: Commit message verified: {commit_msg}")
     except ValueError as e:
         print(e)
         sys.exit(1)
