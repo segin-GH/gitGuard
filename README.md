@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/534b5350-01ca-4019-8003-0d62132d30c2/deploy-status)](https://app.netlify.com/sites/gitguard/deploys)
+
 # gitGuard
 
 ### gitguard: where sloppy commits meet their match.
