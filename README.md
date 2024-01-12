@@ -31,7 +31,7 @@
    ```
 3. Run the installation script (requires appropriate permissions):
    ```
-   ./gitguard.sh
+   ./gitguard.py
    ```
 
 ## Configuration
