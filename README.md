@@ -31,7 +31,7 @@
    ```
 3. Run the installation script (requires appropriate permissions):
    ```
-   ./install.sh
+   ./guard.sh
    ```
 
 ## Configuration
