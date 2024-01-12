@@ -1,4 +1,4 @@
-name: Auto-update Zip on Push
+name: build
 
 on: 
   push:
