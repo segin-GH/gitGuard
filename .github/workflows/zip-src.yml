@@ -1,24 +1,30 @@
-name: Zip SRC folder
+name: Auto-update Zip on Push
 
-on: [push, pull_request]
+on: 
+  push:
+    paths:
+      - 'src/**'
 
 jobs:
-  zip:
+  update-zip:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      
-      - name: Install zip
-        run: sudo apt-get install zip
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
-      - name: Zip the SRC folder
-        run: zip -r gitguard.zip src
+    - name: Zip SRC Directory
+      run: |
+        mkdir -p dist
+        zip -r dist/gitguard.zip src
 
-      - name: Upload ZIP as Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: gitguard
-          path: gitguard.zip
+    - name: Configure Git
+      run: |
+        git config --global user.email "bot@example.com"
+        git config --global user.name "Your Automation Bot"
 
+    - name: Commit and Push Changes
+      run: |
+        git add dist/gitguard.zip
+        git commit -m "Automated update of gitguard.zip in dist folder"
+        git push
