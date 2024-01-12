@@ -27,7 +27,7 @@
    ```
 2. Navigate to the `gitGuard` directory:
    ```
-   cd gitGuard/src
+   cd ./gitGuard/src
    ```
 3. Run the installation script (requires appropriate permissions):
    ```
