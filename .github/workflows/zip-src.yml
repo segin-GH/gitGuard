@@ -1,0 +1,24 @@
+name: Zip SRC folder
+
+on: [push, pull_request]
+
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Install zip
+        run: sudo apt-get install zip
+
+      - name: Zip the SRC folder
+        run: zip -r gitguard.zip src
+
+      - name: Upload ZIP as Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: gitguard
+          path: gitguard.zip
+
