@@ -13,10 +13,15 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Zip SRC Directory
+    - name: Create .gitguard Directory and Copy Contents
+      run: |
+        mkdir -p .gitguard
+        cp -r src/* .gitguard/
+
+    - name: Zip .gitguard Directory
       run: |
         mkdir -p dist
-        zip -r dist/gitguard.zip src
+        zip -r dist/gitguard.zip .gitguard
 
     - name: Configure Git
       run: |
@@ -26,5 +31,5 @@ jobs:
     - name: Commit and Push Changes
       run: |
         git add dist/gitguard.zip
-        git commit -m "Automated update of gitguard.zip in dist folder"
+        git commit -m "ci: automated update for dist"
         git push
