@@ -14,8 +14,8 @@
 
 - **Language Agnosticism**: Compatible with any programming language, ideal for multi-language projects.
 - **Easy Integration with Git**: Utilizes Git's `commit-msg` hook for automatic validation of commit messages.
-- **Customizable Rules**: Flexible configuration file to define your own commit message rules.
-- **Cross-Platform Compatibility**: Works seamlessly on Windows, Linux, and macOS.
+- **Customizable Rules**: Flexible configuration file to define your own commit message rules. (not implemnted)
+- **Cross-Platform Compatibility**: Works seamlessly on Windows, Linux, and macOS. (Only tested in LINUX)
 - **User-Friendly Feedback**: Provides clear, actionable feedback for non-conforming commit messages.
 - **Simple Setup**: Easy to install and configure, fitting into existing workflows effortlessly.
 
@@ -27,11 +27,11 @@
    ```
 2. Navigate to the `gitGuard` directory:
    ```
-   cd gitGuard
+   cd gitGuard/src
    ```
 3. Run the installation script (requires appropriate permissions):
    ```
-   ./guard.sh
+   ./gitguard.sh
    ```
 
 ## Configuration
