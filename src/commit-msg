@@ -17,14 +17,14 @@ def print_error(commit_msg, error_pos, error_msg, style):
 
 
 def validate_commit_message(commit_msg):
-    prefix_pattern = r"^(feat|fix|docs|style|refactor|perf|test|chore)"
+    prefix_pattern = r"^(feat|fix|docs|style|refactor|perf|test|chore|ci|build)"
     scope_pattern = r"\([a-z0-9_\-]+\)"
     message_pattern = r":\s.+$"
 
     prefix_match = re.match(prefix_pattern, commit_msg)
     if not prefix_match:
         print_error(
-            commit_msg, 0, "Whoops! Invalid prefix. Should be feat, fix, docs, style, refactor, pref, test, chore.", RED + BOLD)
+            commit_msg, 0, "Whoops! Invalid prefix. Should be feat, fix, docs, style, refactor, pref, test, chore, ci, build.", RED + BOLD)
         return False
 
     rest_msg = commit_msg[len(prefix_match.group()):]
