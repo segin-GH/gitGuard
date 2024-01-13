@@ -25,8 +25,8 @@ jobs:
 
     - name: Configure Git
       run: |
-        git config --global user.email "bot@example.com"
-        git config --global user.name "GITGUARD Bot"
+        git config --global user.email "segin.bytes@gmail.com"
+        git config --global user.name "segin-GH"
 
     - name: Commit and Push Changes
       run: |
