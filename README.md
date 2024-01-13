@@ -11,6 +11,24 @@
 
 `gitGuard` is a versatile, language-agnostic tool designed to enforce commit message standards in various types of projects. Drawing inspiration from `commitlint`, `gitGuard` integrates with version control systems like Git to ensure that all commit messages adhere to predefined rules and standards set by  [convetional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) .
 
+## Setup
+1. Download Git-Guard in root of the repo
+	```
+	wget https://github.com/segin-GH/gitGuard/raw/main/dist/gitguard.zip
+	```
+2.  unzip `gitguard.zip`
+	```
+	unzip gitguard.zip 
+	```
+3.  rm `gitguard.zip`
+	```
+	rm gitguard.zip
+	``` 
+4. Install `gitguard`
+	```
+	./gitguard.py
+	```
+
 ## Key Features
 
 - **Language Agnosticism**: Compatible with any programming language, ideal for multi-language projects.
@@ -52,6 +70,5 @@ Once `gitGuard` is installed and configured, it automatically validates commit m
 ## Contributing
 
 We welcome contributions to `gitGuard`! Please read our contributing guidelines in `CONTRIBUTING.md` for more information on how you can contribute to this project.
-
 
 
