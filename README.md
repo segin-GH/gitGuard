@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/534b5350-01ca-4019-8003-0d62132d30c2/deploy-status)](https://app.netlify.com/sites/gitguard/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/534b5350-01ca-4019-8003-0d62132d30c2/deploy-status)](https://app.netlify.com/sites/gitguard/deploys)  [![build](https://github.com/segin-GH/gitGuard/actions/workflows/zip-src.yml/badge.svg?branch=main)](https://github.com/segin-GH/gitGuard/actions/workflows/zip-src.yml)
 
 # gitGuard
 
