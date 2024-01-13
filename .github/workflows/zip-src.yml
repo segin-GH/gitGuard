@@ -26,10 +26,12 @@ jobs:
     - name: Configure Git
       run: |
         git config --global user.email "bot@example.com"
-        git config --global user.name "Your Automation Bot"
+        git config --global user.name "GITGUARD Bot"
 
     - name: Commit and Push Changes
       run: |
         git add dist/gitguard.zip
         git commit -m "ci: automated update for dist"
         git push
+      env:
+        GIT_AUTH_TOKEN: ${{ secrets.GIT_GUARD_TOKEN }}
