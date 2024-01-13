@@ -19,7 +19,7 @@
 - **User-Friendly Feedback**: Provides clear, actionable feedback for non-conforming commit messages.
 - **Simple Setup**: Easy to install and configure, fitting into existing workflows effortlessly.
 
-## Installation
+## Installation (DEV)
 
 1. Clone the `gitGuard` repository:
    ```
