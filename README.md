@@ -4,6 +4,7 @@
 
 ### gitguard: where sloppy commits meet their match.
 
+![example](https://github.com/segin-GH/gitGuard/assets/98380527/3905b2f7-faa4-4988-99a4-a055c1a0eaab)
 
 
 ## Overview
