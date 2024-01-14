@@ -2,32 +2,114 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitGuard</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>git guard</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <style>
-        body {
-            background-color: rgb(17, 17, 17);
-            margin: 40px auto;
-            max-width: 650px;
-            line-height: 1.6;
-            font-size: 18px;
-            color: #9b9b9b;
-            padding: 0 10px
-        }
+<body class="bg-zinc-950 text-neutral-400 font-mono h-screen">
+  <nav class=" fixed w-full">
+    <div class=" bg-zinc-950 p-4  px-16 flex justify-between shadow-sm shadow-slate-800 z-50">
+      <a href="/" class="font-bold text-lg">GITGUARD</a>
+      <ul class="flex space-x-20 justify-end">
+        <li><a href="https://github.com/segin-GH/gitguard" class="hover:text-gray-300">Github</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="flex justify-center items-center h-[100vh] space-y-10">
+    <div class="text-center">
+      <h1 data-value="GitGuard" class="text-7xl font-bold">GitGuard</h1>
+      <p class="text-3xl mt-5">Where sloppy commits meet their match.</p>
 
-        h1,
-        h2,
-        h3 {
-            line-height: 1.2
-        }
-    </style>
+      <div class="flex justify-center items-center space-x-8 mt-10">
+        <a href="#install"
+          class=" hover:bg-neutral-800 text-neutral-200 font-bold py-2 px-8 rounded inline-flex items-center border-2 border-neutral-500">
+          <span>Install</span>
+        </a>
+        <a href="#learn-more"
+          class="bg-neutral-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+          <span>Learn More</span>
+          <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
 
-    <h1>Git Guard</h1>
-    <h3>Where sloppy commits meets there match.</h3>
+  <section id="learn-more" class="learn-more-section bg-zinc-950 text-neutral-400 font-mono">
+    <div class="content-wrapper flex items-center justify-center h-full">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-8">Dive Into the World of GitGuard!</h2>
+        <p class="text-lg">
+          Welcome to GitGuard, the superhero of commit messages! Imagine a world where every commit message is clear,
+          concise, and follows the sacred rules of Conventional Commits. That's the world GitGuard creates. Let's embark
+          on a journey through its awesome features!
+        </p>
+        <h3 class="text-3xl font-semibold mt-6 mb-4">Why GitGuard Rocks:</h3>
+        <ul class="list-disc list-inside space-y-2 text-lg">
+          <li>Language Agnosticism: Whether you're coding in Python, rustling up some Rust, or juggling JavaScript,
+            GitGuard speaks your language. Perfect for bilingual codebases!</li>
+          <li>Buddy with Git: Hooks right into Git's commit-msg hook, like a sidekick for your commits, ensuring they're
+            always up to the mark.</li>
+          <li>Customize Your Rules: Although still on the drawing board, imagine setting your own commit commandments!
+            (Coming soon!)</li>
+          <li>Cross-Platform Champion: Tested in the harsh terrains of Linux, but fear not, Windows and macOS users,
+            compatibility is on the horizon!</li>
+          <li>Feedback Friend: Get gentle nudges instead of hard knocks when your commit messages stray off the path.
+          </li>
+          <li>Setup Simplicity: Easy-peasy installation, so you can spend more time coding and less time configuring.
+          </li>
+        </ul>
+        <p class="text-lg mt-6">
+          Embrace GitGuard, and turn your commit messages from a mundane task into a harmonious symphony of clarity and
+          consistency. Ready to revolutionize your repository? GitGuard is your go-to guardian!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="install" class="install-section bg-zinc-950 text-neutral-400 font-mono h-screen">
+    <div class="content-wrapper flex items-center justify-center space-x-7 h-full">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-8">Setup GitGuard</h2>
+        <div class="install-instructions text-lg">
+          <ol class="list-decimal list-inside space-y-2 ">
+            <li>Download Git-Guard in the root of the repo
+              <pre><code>wget https://github.com/segin-GH/gitGuard/raw/main/dist/gitguard.zip</code></pre>
+            </li>
+            <li>Unzip <code>gitguard.zip</code>
+              <pre><code>unzip gitguard.zip</code></pre>
+            </li>
+            <li>Remove <code>gitguard.zip</code>
+              <pre><code>rm gitguard.zip</code></pre>
+            </li>
+            <li>Change dir to <code>.gitguard</code>
+              <pre><code>cd .gitguard</code></pre>
+            </li>
+            <li>Install <code>gitguard</code>
+              <pre><code>./gitguard.py</code></pre>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <footer class="p-4">
+    <!-- at least pretend to care about the footer -->
+    <p class="text-center text-neutral-400 font-mono">Made with <span class="text-red-500">&hearts;</span> by
+      <a href="https://github.com/segin-GH" class="text-neutral-200 hover:text-gray-300 underline">Segin</a>
+    </p>
+  </footer>
+
 </body>
+<script src="script.js"></script>
 
 </html>

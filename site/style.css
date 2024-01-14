@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.learn-more-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-wrapper {
+    max-width: 900px;
+}
+
+.container {
+    padding: 20px;
+}
+
+
+/* Styling for lists */
+.learn-more-section ul {
+    padding-left: 20px;
+}
+
+.learn-more-section li {
+    text-align: left;
+}
+
+.install-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    /* Adds padding to the top and bottom of the section */
+}
+
+.install-instructions ol {
+    text-align: left;
+    padding-left: 20px;
+    margin: 0;
+    /* Removes default margin */
+}
+
+.install-instructions li {
+    margin-bottom: 20px;
+    /* Increases spacing between each list item */
+    padding: 20px 0;
+    /* Adds padding above and below each list item */
+}
+
+.install-instructions code {
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.install-instructions pre {
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-top: 5px;
+    /* Slight top margin for pre blocks */
+    margin-bottom: 5px;
+    /* Slight bottom margin for pre blocks */
+}
