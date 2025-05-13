@@ -25,23 +25,35 @@ def validate_commit_message(commit_msg):
     prefix_match = re.match(prefix_pattern, commit_msg)
     if not prefix_match:
         print_error(
-            commit_msg, 0, "oops! Invalid prefix. Should be feat, fix, docs, style, refactor, pref, test, chore, ci, build.", RED + BOLD)
+            commit_msg,
+            0,
+            "oops! Invalid prefix. Should be feat, fix, docs, style, refactor, pref, test, chore, ci, build.",
+            RED + BOLD,
+        )
         return False
 
-    rest_msg = commit_msg[len(prefix_match.group()):]
+    rest_msg = commit_msg[len(prefix_match.group()) :]
 
-    if rest_msg.startswith('('):
+    if rest_msg.startswith("("):
         scope_match = re.match(scope_pattern, rest_msg)
         if not scope_match:
-            print_error(commit_msg, len(prefix_match.group()),
-                        "This scope thingy is messed up. It should be like (scope):.", RED + BOLD)
+            print_error(
+                commit_msg,
+                len(prefix_match.group()),
+                "This scope thingy is messed up. It should be like (scope):.",
+                RED + BOLD,
+            )
             return False
-        rest_msg = rest_msg[len(scope_match.group()):]
+        rest_msg = rest_msg[len(scope_match.group()) :]
 
     if not re.match(message_pattern, rest_msg):
         error_pos = len(commit_msg) - len(rest_msg)
-        print_error(commit_msg, error_pos,
-                    "Hey genius, message should start with a colon and space.", RED + BOLD)
+        print_error(
+            commit_msg,
+            error_pos,
+            "Hey genius, message should start with a colon and space.",
+            RED + BOLD,
+        )
         return False
 
     return True
@@ -49,20 +61,29 @@ def validate_commit_message(commit_msg):
 
 def read_file(file_path):
     try:
-        with open(file_path, 'r') as file:
+        with open(file_path, "r") as file:
             for line in file:
                 # Skip comment lines and empty lines
-                if not line.startswith('#') and line.strip():
+                if not line.startswith("#") and line.strip():
                     return line.strip()
         # If the file is empty or only has comments, inform the user
-        print_error("Error: The commit message file is empty or only contains comments.",
-                    0, "Please provide a valid commit message.", RED + BOLD)
+        print_error(
+            "Error: The commit message file is empty or only contains comments.",
+            0,
+            "Please provide a valid commit message.",
+            RED + BOLD,
+        )
     except FileNotFoundError:
-        print_error(f"Error: The file {file_path} was not found.",
-                    0, "Please check the file path.", RED + BOLD)
+        print_error(
+            f"Error: The file {file_path} was not found.",
+            0,
+            "Please check the file path.",
+            RED + BOLD,
+        )
     except IOError as e:
         print_error(
-            f"Error: Unable to read the file {file_path}.", 0, str(e), RED + BOLD)
+            f"Error: Unable to read the file {file_path}.", 0, str(e), RED + BOLD
+        )
     return ""  # Return an empty string if an error occurs or no valid line is found
 
 
@@ -70,7 +91,8 @@ def get_commit_message(file_path):
     commit_msg = read_file(file_path)
     if not validate_commit_message(commit_msg):
         raise ValueError(
-            "GITGUARD: Commit message does not follow conventions. Fix it and try again.")
+            "GITGUARD: Commit message does not follow conventions. Fix it and try again."
+        )
     return commit_msg
 
 
