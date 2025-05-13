@@ -18,7 +18,9 @@ def print_error(commit_msg, error_pos, error_msg, style):
 
 
 def validate_commit_message(commit_msg):
-    prefix_pattern = r"^(feat|fix|docs|style|refactor|perf|test|chore|ci|build|broken)"
+    prefix_pattern = (
+        r"^(feat|fix|docs|style|refactor|perf|test|chore|ci|build|broken|merge)"
+    )
     scope_pattern = r"\([a-z0-9_\-]+\)"
     message_pattern = r":\s.+$"
 
