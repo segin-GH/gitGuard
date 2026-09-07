@@ -64,3 +64,84 @@
     margin-bottom: 5px;
     /* Slight bottom margin for pre blocks */
 }
+
+.code-block {
+    position: relative;
+}
+
+.code-block pre {
+    /* Keep the copy button clear of the code while scrolling */
+    padding-right: 56px;
+    /* Thin scrollbar to match the copy button styling */
+    scrollbar-width: thin;
+    scrollbar-color: #3a3a3a #1e1e1e;
+}
+
+.install-instructions pre::-webkit-scrollbar {
+    height: 8px;
+}
+
+.install-instructions pre::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+.install-instructions pre::-webkit-scrollbar-thumb {
+    background-color: #3a3a3a;
+    border-radius: 4px;
+}
+
+.install-instructions pre::-webkit-scrollbar-thumb:hover {
+    background-color: #4a4a4a;
+}
+
+/* Opaque strip so code scrolling past slides under the copy button */
+.code-block::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 8px;
+    /* stop above the horizontal scrollbar */
+    width: 52px;
+    background-color: #1e1e1e;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    pointer-events: none;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    color: #a3a3a3;
+    background-color: #2d2d2d;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.copy-btn:hover {
+    background-color: #3a3a3a;
+    color: #e5e5e5;
+}
+
+.copy-btn.copied .icon-copy {
+    display: none;
+}
+
+.copy-btn.copied .icon-check {
+    display: inline;
+}
+
+.copy-btn .icon-check {
+    color: #4ade80;
+}
