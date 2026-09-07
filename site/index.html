@@ -77,23 +77,10 @@
       <div class="container mx-auto px-6 text-center">
         <h2 class="text-4xl font-bold mb-8">Setup GitGuard</h2>
         <div class="install-instructions text-lg">
-          <ol class="list-decimal list-inside space-y-2 ">
-            <li>Download Git-Guard in the root of the repo
-              <pre><code>wget https://github.com/segin-GH/gitGuard/raw/main/dist/gitguard.zip</code></pre>
-            </li>
-            <li>Unzip <code>gitguard.zip</code>
-              <pre><code>unzip gitguard.zip</code></pre>
-            </li>
-            <li>Remove <code>gitguard.zip</code>
-              <pre><code>rm gitguard.zip</code></pre>
-            </li>
-            <li>Change dir to <code>.gitguard</code>
-              <pre><code>cd .gitguard</code></pre>
-            </li>
-            <li>Install <code>gitguard</code>
-              <pre><code>./gitguard.py</code></pre>
-            </li>
-          </ol>
+          <p>Run this one-liner from the root of your repo:</p>
+          <pre><code>curl -fsSL https://raw.githubusercontent.com/segin-GH/gitGuard/main/install.sh | bash</code></pre>
+          <p class="mt-8">That's it. Done. To uninstall:</p>
+          <pre><code>curl -fsSL https://raw.githubusercontent.com/segin-GH/gitGuard/main/install.sh | bash -s -- --uninstall</code></pre>
         </div>
       </div>
     </div>
