@@ -12,6 +12,22 @@
 `gitGuard` is a versatile, language-agnostic tool designed to enforce commit message standards in various types of projects. Drawing inspiration from `commitlint`, `gitGuard` integrates with version control systems like Git to ensure that all commit messages adhere to predefined rules and standards set by  [convetional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) .
 
 ## Setup
+Run this one-liner from the root of your repo:
+
+```
+curl -fsSL https://raw.githubusercontent.com/segin-GH/gitGuard/main/install.sh | bash
+```
+
+That's it. It downloads gitGuard, installs the `commit-msg` hook, and cleans up after itself.
+
+To uninstall:
+
+```
+curl -fsSL https://raw.githubusercontent.com/segin-GH/gitGuard/main/install.sh | bash -s -- --uninstall
+```
+
+### Manual installation
+
 1. Download Git-Guard in root of the repo
 	```
 	wget https://github.com/segin-GH/gitGuard/raw/main/dist/gitguard.zip
